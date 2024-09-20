@@ -12,3 +12,11 @@ Insights about product sales for year 2019
 - [Results/Findings](#resultsfindings)
 - [Recommendations](#recommendations)
 - [Limitations](#limitations)
+
+## Project Overview
+
+![image](https://github.com/user-attachments/assets/7d04fda8-5f19-47fa-af3a-937239f19353)
+
+## Tools
+
+- Data Visualization - PowerBI [Download here](https://www.microsoft.com/en-us/download/details.aspx?id=58494)
