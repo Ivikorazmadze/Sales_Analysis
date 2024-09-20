@@ -1,7 +1,6 @@
 # Sales_Analysis
 Insights about product sales for year 2019
 
-``
 
 ## Table of Contents
 
