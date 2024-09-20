@@ -56,4 +56,55 @@ Average order value
 Average Order Value = 
  [Total Revenue] / [Total Orders]
 ```
-
+Cities by lowest sales
+```DAX
+Bot 3 Cities = 
+CONCATENATEX(
+    TOPN(
+        3,
+        SUMMARIZE(
+            Total_Sales,
+            Total_Sales[City],
+            "Revenue",[Total Revenue By City]
+        ),
+        [Total Revenue],
+        ASC
+    ),Total_Sales[City],
+    ", ",
+    [Total Revenue],
+    ASC
+)
+```
+Months by lowest sales
+```DAX
+Bottom 3 Months = 
+CONCATENATEX(
+    TOPN(
+        3,
+        SUMMARIZE(
+            Total_Sales,
+            'Calendar'[Month Name],
+            "Revenue",[Total Revenue By Month]
+        ),
+        [Total Revenue],
+        ASC
+    ),'Calendar'[Month Name],
+    ", ",
+    [Total Revenue],
+    ASC
+)
+```
+Top products ("Others" included)
+```DAX
+Rank Top = 
+    if([Top Products Revenue] <> BLANK(),
+    RANKX(TOPN(
+                SELECTEDVALUE('Top N Selection'[Value]),
+                ALLSELECTED('Products Table'),
+                [Total Revenue],
+    ),
+    [Total Revenue],
+    ,
+    DESC,Dense)
+    )
+```
