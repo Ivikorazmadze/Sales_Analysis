@@ -1,6 +1,6 @@
 # Sales_Analysis
 Insights about product sales for year 2019
----
+
 
 ## Table of Contents
 
@@ -23,7 +23,7 @@ Insights about product sales for year 2019
 - Data Input - SQL Server Management Studio 20 [Download here](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16#download-ssms)
 
 ### Data Preparation
----
+
 
 The initial data took several tasks to elaborate
 1) Data Loading and inspection
@@ -36,7 +36,7 @@ The initial data took several tasks to elaborate
 
 
 ### Explaratory Data Analysis 
----
+
 
 EDA involved in the following report to answer key questions, such as:
 
