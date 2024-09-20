@@ -27,11 +27,7 @@ Insights about product sales for year 2019
 
 The initial data took several tasks to elaborate
 1) Data Loading and inspection
-  
 2) Handling Missing Values
-  
 3) Data formating
-
 4) Create a Calendar Table
-
 5) 
