@@ -51,6 +51,7 @@ EDA involved in the following report to answer key questions, such as:
 
 Data Analysis featured following DAX:
 
+Average order value
 ```DAX
 Average Order Value = 
  [Total Revenue] / [Total Orders]
