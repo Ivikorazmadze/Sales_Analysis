@@ -213,3 +213,11 @@ Top N selection for filtering products
 ```DAX
 Top N Selection = {1,2,3,4,5}
 ```
+
+### Results/Findings
+
+- Cities by highest sales are the following: San Francisco, Los Angeles, New York
+- Cities by lowest sales are the following: Austin, Portland, Seattle
+- Months by highest sales are the following: December, October, April
+- Months by lowest sales are the following: January, September, February
+- Sales are grown from year start to end
