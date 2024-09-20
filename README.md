@@ -108,3 +108,108 @@ Rank Top =
     DESC,Dense)
     )
 ```
+Top cities by sales
+```DAX
+Top 3 Cities = 
+CONCATENATEX(
+    TOPN(
+        3,
+        SUMMARIZE(
+            Total_Sales,
+            Total_Sales[City],
+            "Revenue",[Total Revenue By City]
+        ),
+        [Total Revenue],
+        DESC
+    ),Total_Sales[City],
+    ", ",
+    [Total Revenue],
+    Desc
+)
+```
+Top products revenue
+```DAX
+Top Products Revenue = 
+    var topNselected = SELECTEDVALUE('Top N Selection'[Value])
+
+    var topProdtable = 
+        topn(topNselected,ALLSELECTED('Products Table'),[Total Revenue])
+    
+    var topProdSales = 
+    CALCULATE([Total Revenue],KEEPFILTERS(topProdtable))
+
+    var otherSales = 
+        CALCULATE([Total Revenue],ALLSELECTED('Products Table')
+        ) - 
+        calculate(
+            [Total Revenue],topProdtable
+        )
+    var currentProd =
+        SELECTEDVALUE('Products Table'[Product])
+    return 
+    if(currentProd <> "Others",
+    topProdSales,
+    othersales
+    )
+```
+Total Orders
+```DAX
+Total Orders = COUNTROWS(Total_Sales)
+```
+Total Unique products 
+```DAX
+Total Products Sold = 
+ DISTINCTCOUNT(Total_Sales[Product])
+```
+Total Revenue
+```DAX
+Total Revenue = 
+    SUMX(Total_Sales,Total_Sales[Quantity_Ordered] * Total_Sales[Price_Each])
+```
+Latest Date
+```DAX
+latest Date = 
+LASTDATE('Calendar'[Start of Month])
+```
+Latest MoM sales cahnge % 
+```DAX
+Latest Mom Sales change % = 
+    VAR ld = [latest Date]
+    var Current_month_sales = [Latest Month Total Revenue]
+    var Previous_month_sales = CALCULATE([Total Revenue],'Calendar'[Start of Month] = EDATE(ld,-1))
+    RETURN
+    DIVIDE(Current_month_sales - Previous_month_sales, Previous_month_sales)
+```
+Latest Month total Revenue
+```DAX
+Latest Month Total Revenue = 
+    VAR ld = [latest Date]
+RETURN
+    CALCULATE(
+        [Total Revenue],
+        'Calendar'[Start of Month] = ld
+    )
+```
+MoM Sales change %
+```DAX
+Latest Month Total Revenue = 
+    VAR ld = [latest Date]
+RETURN
+    CALCULATE(
+        [Total Revenue],
+        'Calendar'[Start of Month] = ld
+    )
+```
+Total revenue by previous month
+```DAX
+Total Revenue Previous Month = 
+    CALCULATE([Total Revenue],PREVIOUSMONTH('Calendar'[Date]))
+```
+Month name derived from the column month
+```DAX
+Month Name = FORMAT('Calendar'[Date],"MMM")
+```
+Top N selection for filtering products
+```DAX
+Top N Selection = {1,2,3,4,5}
+```
