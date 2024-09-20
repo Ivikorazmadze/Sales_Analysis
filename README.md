@@ -30,4 +30,24 @@ The initial data took several tasks to elaborate
 2) Handling Missing Values
 3) Data formating
 4) Create a Calendar Table
-5) 
+5) Format month table
+6) Includes custom measure written in DAX
+7) Build relationships between tables
+
+
+### Explaratory Data Analysis 
+---
+
+EDA involved in the following report to answer key questions, such as:
+
+- Average Length of Employment
+
+- Gender Distribution
+
+- Locations of Work
+
+- Termination Rate Via Departments
+
+- Change in Total Employees Number
+
+- Age Group Distribution
